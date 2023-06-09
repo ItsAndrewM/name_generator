@@ -5,10 +5,12 @@ import {
 } from "../data/adjectives";
 import { nouns } from "../data/nouns";
 import { randomNum } from "../helpers/randomNum";
+import Selector from "./Selector";
 
 const Terminal = () => {
     const [adjective, setAdjective] = useState();
     const [noun, setNoun] = useState();
+    const [choice, setChoice] = useState();
 
     const handleClick = e => {
         e.preventDefault();
@@ -21,6 +23,7 @@ const Terminal = () => {
     return (
         <Wrapper>
             <Container>
+                <Selector setChoice={setChoice} />
                 {noun && adjective &&
                     <p>{adjective} {noun}</p>
                 }
